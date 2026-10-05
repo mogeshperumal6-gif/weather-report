@@ -1,0 +1,147 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.app-header h1 {
+  font-size: 2.2rem;
+}
+
+.app-header p {
+  opacity: 0.9;
+  margin-top: 0.3rem;
+}
+
+main {
+  width: 100%;
+  max-width: 480px;
+  flex: 1;
+}
+
+.app-footer {
+  margin-top: 2rem;
+  opacity: 0.8;
+}
+
+/* Search form (Flexbox) */
+.search-form {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.search-form input {
+  flex: 1;
+  padding: 0.85rem 1rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-form button {
+  padding: 0.85rem 1.4rem;
+  border: none;
+  border-radius: 10px;
+  background: #1e1e2f;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.2s;
+}
+
+.search-form button:hover:not(:disabled) {
+  background: #34344f;
+  transform: translateY(-2px);
+}
+
+.search-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+  background: rgba(255, 70, 70, 0.9);
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Weather card */
+.card {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.main-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.temp {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.description {
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+}
+
+/* Details (Grid) */
+.details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+}
+
+.details div {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.8rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.details span {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .app-header h1 {
+    font-size: 1.7rem;
+  }
+  .search-form {
+    flex-direction: column;
+  }
+  .temp {
+    font-size: 2.8rem;
+  }
+}
+
+@media (min-width: 900px) {
+  main {
+    max-width: 560px;
+  }
+  .details {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
